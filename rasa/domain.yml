@@ -1,0 +1,92 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - find_transactions
+  - category_breakdown
+  - set_alert
+  - category_entry
+  - amount_entry
+  ## - show_menu
+
+slots:
+  transaction_summary:
+    type: text
+  reminder_amount:
+    type: unfeaturized
+  reminder_category:
+    type: unfeaturized
+
+entities:
+  - show
+  - alert
+  - operator_equal
+  - operator_greater_than
+  - operator_less_than
+  - account_number
+  - number
+  - time
+  - currency
+  - reference
+  - transaction_type
+  - card
+  - merchant_name
+  - city
+  - reminder_amount
+  - reminder_category
+
+actions:
+  - action_find_transactions
+  - action_category_breakdown
+
+forms:
+  - reminder_form
+
+
+responses:
+  utter_greet:
+  - text: "🤖 Howzit Lebo 👋 how are you today?"
+
+  utter_cheer_up:
+  - text: "🤖 Okay let's try cheer you up with a joke.\n...\nKidding, I have no INTEREST in telling jokes.\nSee what I did there 😀."
+
+  utter_did_that_help:
+  - text: "🤖 Did that help you?"
+
+  utter_happy:
+  - text: "🤖 Great, carry on!"
+
+  utter_goodbye:
+  - text: "🤖 Cheerio 👋"
+
+  utter_eish:
+    - text: "🤖 🥴 Well, thats your problem now."
+
+  utter_iamabot:
+  - text: "🤖 I am a bot, powered by Rasa made by my lord and saviour Lebo."
+
+  utter_menu_options:
+  - text: "🤖 You can ask me about a few things 🤖.\nTry asking me about your transactions,\nask me about your spending habits 💵\nor set a reminder to let you know about those habits 🔔"
+
+  utter_alert_not_available:
+  - text: "🤖 Unfortunately my alert system is offline at the moment - try again tomorrow 💀"
+
+  utter_alert_clarification:
+  - text: "🤖 Awesome! I'm going to need a few things from you."
+
+  utter_ask_reminder_amount:
+    - text: "🤖 What's the transaction threshold amount?"
+
+  utter_ask_reminder_category:
+    - text: "🤖 What category is this spending for?"
+
+  utter_reminder_confirmation:
+    - text: "🤖 Great! You'll get an alert next time you spend more than {reminder_amount} on {reminder_category}."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
